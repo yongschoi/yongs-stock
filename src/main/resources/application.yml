@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: window-dev
+---
+server:
+  port: 0
+
+logging:
+  level:
+    yongs:
+      temp: DEBUG
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF  
+      
+spring:
+  profiles: window-dev
+  application:
+    name: yongs-stock  
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/flex
+      
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: localhost
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
