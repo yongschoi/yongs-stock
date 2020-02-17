@@ -1,12 +1,23 @@
 package yongs.temp.vo;
 
+import org.springframework.data.annotation.Id;
+
 public class Payment {
+	@Id
+	private String id;	
 	private String no;
 	private String company;
 	private String cardNo;
 	private long total;
 	private long opentime;
+	private String orderNo;
 	
+	public String getOrderNo() {
+		return orderNo;
+	}
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
+	}
 	public long getTotal() {
 		return total;
 	}
