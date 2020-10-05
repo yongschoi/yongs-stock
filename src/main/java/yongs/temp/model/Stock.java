@@ -9,10 +9,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Scope(scopeName = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class Stock {
 	@Id
-	String id;
-    String code;
-	String name;
-	int qty;	
+	private String id;
+    private String code;
+    private String name;
+    private int qty;	
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getCode() {
 		return code;
 	}
